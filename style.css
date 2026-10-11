@@ -1,0 +1,325 @@
+
+:root {
+  --bg: #faf8f4; /* 背景色 クリーム */
+  --text: #1c1712; /* 文字色 墨色 */
+  --text-light: rgba(28, 23, 18, 0.7); /* 薄い文字(墨色を薄めたもの) */
+  --line: rgba(28, 23, 18, 0.15); /* 区切り線 */
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 300;
+  line-height: 1.9;
+}
+
+h1,
+h2,
+.logo,
+.product-index {
+  font-family: 'Cormorant Garamond', 'Noto Serif JP', serif;
+  font-variant-numeric: lining-nums; 
+}
+
+h1,
+h2 {
+  letter-spacing: 0.05em;
+  text-wrap: balance; 
+}
+
+h2 {
+  font-weight: 500;
+  font-size: 32px;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: var(--bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 6vw;
+  z-index: 100;
+}
+
+.logo {
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+
+nav a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-left: 40px;
+  padding: 10px 0;
+}
+
+nav a,
+.to-top {
+  transition: opacity 0.3s ease;
+}
+
+nav a:hover,
+.to-top:hover {
+  opacity: 0.5;
+}
+
+section {
+  padding: 140px 6vw;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-eyebrow {
+  font-size: 14px;
+  letter-spacing: 4px;
+  color: var(--text-light);
+  margin-bottom: 30px;
+  text-transform: uppercase;
+}
+
+.hero h1 {
+  font-weight: 600;
+  font-size: 72px;
+  line-height: 1.3;
+}
+
+.hero p {
+  margin-top: 20px;
+  color: var(--text-light);
+  font-size: 19px;
+}
+
+.craft-label {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: var(--text-light);
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.craft {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.craft h2 {
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.craft p {
+  color: var(--text-light);
+  font-size: 15px;
+  max-width: 460px;
+}
+
+.craft-note {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+  font-size: 14px;
+  color: var(--text-light);
+}
+
+.craft-visual {
+  aspect-ratio: 4 / 5;
+}
+
+.product-visual {
+  aspect-ratio: 1 / 1.15;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.craft-visual img,
+.product-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lineup-head {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.lineup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 40px;
+}
+
+.product {
+  text-align: center;
+}
+
+.product-index {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  font-size: 13px;
+}
+
+.product h3 {
+  font-weight: 500;
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.price {
+  font-size: 15px;
+  color: var(--text-light);
+}
+
+.desc {
+  margin-top: 14px;
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.cta {
+  text-align: center;
+  padding-bottom: 160px;
+  position: relative;
+}
+
+.cta h2 {
+  margin-bottom: 20px;
+}
+
+.cta p {
+  color: var(--text-light);
+  font-size: 15px;
+}
+
+.to-top {
+  position: absolute;
+  right: 6vw;
+  bottom: 60px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--text);
+  border-radius: 50%;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 40px 6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: var(--text-light);
+}
+
+.hero > * {
+  animation: fade-in 1.6s ease both;
+}
+
+.hero h1 {
+  animation-delay: 0.8s;
+}
+
+.hero p {
+  animation-delay: 1.6s;
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.reveal {
+  transition: opacity 1.2s ease;
+}
+
+.js .reveal {
+  opacity: 0;
+}
+
+.js .reveal.is-visible {
+  opacity: 1;
+}
+
+.sp {
+  display: none;
+}
+
+/* スマホ画面用 */
+@media (max-width: 780px) {
+  .sp {
+    display: inline;
+  }
+
+  section {
+    padding: 80px 7vw;
+  }
+
+  h2 {
+    font-size: 26px;
+  }
+
+  .hero h1 {
+    font-size: 44px;
+  }
+
+  .craft {
+    grid-template-columns: 1fr;
+  }
+
+  .lineup-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  nav a {
+    margin-left: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: 16px;
+    text-align: center;
+  }
+}
